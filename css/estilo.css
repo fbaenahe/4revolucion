@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  height: 200px;
+  background-color: #B4EAC8;
+  text-align: center;
+  font-size: 70px;
+  color: #fff;
+  font-family: monospace;
+}
+
+header p {
+  padding-top: 40px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.menuppal li {
+  float: left;
+  list-style: none;
+}
+
+li a {
+  display: block;
+  padding: 14px 16px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.general{
+  width: 80%;
+  text-align: justify;
+  margin: auto;
+  padding-top: 15px;
+}
+
+.general p{
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+.imagenindex{
+  padding: 5px;
+  border-radius: 8px;
+  width: 450px;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cc{
+  font-style: italic;
+}
+.neg{
+  font-weight: bold;
+}
+
+/* .tabla, .tabla td {
+  border: 1px solid black;
+} */
+
+.tabla {
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla td {
+  width: 50px;
+}
+
+.imgfabian{
+  width: 145px;
+  height: 189px;
+  border-radius: 10%;
+
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.imgcatalina{
+  border-radius: 10%;
+
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.espa{
+  padding-right: 15px;
+}
