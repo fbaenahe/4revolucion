@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>4ta Revolución Industrial</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none}
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>
+        <p><a class="titulo">4ta Revolución Industrial</a></p>
+      </header>
+      <menu>
+        <ul class="menuppal">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="who.html">Quiénes somos</a></li>
+          <li><a href="work1.html" >Asignación 1A</a></li>
+          <li><a href="work3.html">Asignación 1B</a></li>
+          <li><a href="work2.html" >Asignación 2</a></li>
+          <li><a href="work4.html" class="active">Asignación 3</a></li>
+        </ul>
+      </menu>
+<br>
+<div class="w3-content" style="max-width:800px">
+  <img class="mySlides" src="img/a4d1.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d2.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d3.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d4.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d5.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d6.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d7.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d8.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d9.jpg" style="width:100%">
+  <img class="mySlides" src="img/a4d10.jpg" style="width:100%">
+</div>
+
+<div class="w3-center">
+  <div class="w3-section">
+    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+  </div>
+  <button class="w3-button demo" onclick="currentDiv(1)">1</button>
+  <button class="w3-button demo" onclick="currentDiv(2)">2</button>
+  <button class="w3-button demo" onclick="currentDiv(3)">3</button>
+  <button class="w3-button demo" onclick="currentDiv(4)">4</button>
+  <button class="w3-button demo" onclick="currentDiv(5)">5</button>
+  <button class="w3-button demo" onclick="currentDiv(6)">6</button>
+  <button class="w3-button demo" onclick="currentDiv(6)">7</button>
+  <button class="w3-button demo" onclick="currentDiv(6)">8</button>
+  <button class="w3-button demo" onclick="currentDiv(6)">9</button>
+  <button class="w3-button demo" onclick="currentDiv(6)">10</button>
+</div>
+
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-red", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-red";
+      }
+      </script>
+
+    </div>
+  </body>
+</html>
