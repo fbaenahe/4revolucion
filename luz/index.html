@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de LED ESP32</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.2.8/mqtt.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        button { font-size: 20px; padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Control de LED con MQTT</h1>
+    <p>Estado: <span id="estado">Desconocido</span></p>
+    <button id="boton">Cargando...</button>
+
+    <script>
+        const broker = "wss://broker.hivemq.com:8884/mqtt"; // Servidor MQTT público con WebSockets
+        const topicLed = "esp32/led";      // Tópico para controlar LED
+        const topicEstado = "esp32/estado"; // Tópico para recibir estado
+
+        // Conectar a MQTT
+        const client = mqtt.connect(broker);
+
+        client.on("connect", function () {
+            console.log("Conectado a MQTT");
+            document.getElementById("boton").innerText = "Cargar Estado...";
+            client.subscribe(topicEstado);
+        });
+
+        // Escuchar mensajes del ESP32
+        client.on("message", function (topic, message) {
+            if (topic === topicEstado) {
+                let estado = message.toString();
+                document.getElementById("estado").innerText = estado;
+                document.getElementById("boton").innerText = estado === "Encendido" ? "Apagar" : "Encender";
+            }
+        });
+
+        // Evento para botón
+        document.getElementById("boton").addEventListener("click", function () {
+            let nuevoEstado = document.getElementById("boton").innerText === "Encender" ? "ON" : "OFF";
+            client.publish(topicLed, nuevoEstado);
+        });
+    </script>
+
+</body>
+</html>
